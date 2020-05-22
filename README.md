@@ -1,9 +1,11 @@
 ## Quickstart
 
 Clone the repo:
+
 `git clone git@github.com:itsseanl/dogfinder.git`
 
 Install dependencies and run:
+
 `yarn && yarn start`
 
 ## create-react-app
