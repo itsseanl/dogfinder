@@ -1,21 +1,19 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper {
+  max-width: 900px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +22,126 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.collections {
+  height: auto;
+  background: #fff;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.collection img {
+  height: 50px;
+  width: 50px;
+}
+
+.controls {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: Center;
+}
+select {
+  width: 115px;
+  margin: 15px;
+}
+option {
+  width: 100%;
+}
+
+img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  max-height: 250px;
+}
+.image::before {
+  content: "";
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.images {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-auto-rows: 1fr;
+}
+
+.collection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 25px auto;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.collection:last-of-type {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.info,
+.btns {
+  display: flex;
+}
+img {
+  margin-right: 15px;
+}
+.view,
+.remove {
+  margin-left: 15px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.26);
+  font-size: 18px;
+}
+.view {
+  background: green;
+}
+.remove {
+  background: red;
+}
+
+@media (min-width: 640px) {
+  .images {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width: 680px) {
+  .controls {
+    padding: 0;
+  }
+  .search {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .add {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .add > button {
+    margin-left: 15px;
+  }
+}
+@media (min-width: 900px) {
+  .images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  img {
+    max-height: 289px;
   }
 }
