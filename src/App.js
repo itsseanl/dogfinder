@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import DogFetch from "./components/DogFetch";
 import ImgFetch from "./components/ImgFetch";
@@ -12,6 +12,10 @@ function App() {
   const [images, setImages] = useState([]);
   const [collection, setCollection] = useState([]);
   const [viewCollection, setViewCollection] = useState(false);
+
+  useEffect(() => {
+    localStorage.getItem("adfbreeds");
+  }, []);
 
   const handleSetImages = imgList => {
     setImages(imgList);
@@ -60,6 +64,7 @@ function App() {
   //sets the state of currently selected breed
   const handleSelected = selected => {
     setSelected(selected);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   //sets the state of the viewCollection state (shows/hides collection)

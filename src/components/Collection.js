@@ -11,6 +11,7 @@ const Collection = ({
     handleSelected(entry.selected);
     handleViewCollection(false);
   }
+  console.log(collection);
   return (
     <>
       <div className="collections">
@@ -18,7 +19,7 @@ const Collection = ({
           return (
             <div className="collection">
               <div className="info">
-                <img src={entry.image} />
+                <img src={entry.image} alt={entry.image} />
                 <p>{entry.selected}</p>
               </div>
               <div className="btns">
