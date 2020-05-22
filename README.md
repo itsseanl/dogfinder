@@ -1,3 +1,13 @@
+## Quickstart
+
+Clone the repo:
+`git clone git@github.com:itsseanl/dogfinder.git`
+
+Install dependencies and run:
+`yarn && yarn start`
+
+## create-react-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
